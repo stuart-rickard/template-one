@@ -1,8 +1,6 @@
-const router = require('express').Router();
-const commentRoutes = require('./comment-routes');
-const pizzaRoutes = require('./pizza-routes');
+const router = require("express").Router();
+const exampleRoutes = require("./example-routes");
 
-router.use('/comments', commentRoutes);
-router.use('/pizzas', pizzaRoutes);
+router.use("/comments", exampleRoutes);
 
 module.exports = router;

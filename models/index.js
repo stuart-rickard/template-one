@@ -1,4 +1,3 @@
-const Pizza = require('./Pizza');
-const Comment = require('./Comment');
+const dataOne = require("./schemaOne");
 
-module.exports = { Pizza, Comment };
+module.exports = { dataOne };
