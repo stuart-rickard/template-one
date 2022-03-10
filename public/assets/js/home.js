@@ -1,34 +1,32 @@
-const $backBtn = document.querySelector("#back-btn");
+const exampleBtn = document.getElementById("exampleBtn");
 
-let pizzaId;
+function getData() {
+  // const searchParams = new URLSearchParams(
+  //   document.location.search.substring(1)
+  // );
+  const paramVar = searchParams.get("id");
 
-function getPizza() {
-  // get id of pizza
-  const searchParams = new URLSearchParams(
-    document.location.search.substring(1)
-  );
-  const pizzaId = searchParams.get("id");
-
-  // get pizzaInfo
-  fetch(`/api/pizzas/${pizzaId}`)
+  fetch(`/api/example/${paramVar}`)
     .then((response) => {
       console.log(response);
       if (!response.ok) {
-        console.log("hi");
-        throw new Error({ message: "Something went wrong!" });
+        console.log("Response error");
+        throw new Error({ message: "getData response error" });
       }
 
       return response.json();
     })
-    .then(printPizza)
+    // .then(callbackFunction)
     .catch((err) => {
       console.log(err);
-      alert("Cannot find a pizza with this id! Taking you back.");
-      window.history.back();
+      alert("Fetch error");
     });
 }
 
-$newCommentForm.addEventListener("submit", handleNewCommentSubmit);
-$commentSection.addEventListener("submit", handleNewReplySubmit);
+exampleBtn.addEventListener("click", function (evt) {
+  evt.preventDefault();
+  console.log("Click occurred");
+  // add call to getData
+});
 
 getPizza();
