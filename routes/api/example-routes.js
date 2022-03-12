@@ -1,15 +1,19 @@
 const router = require("express").Router();
-// const { newData } = require("../../controllers/example-controller");
-const newData = function () {
-  console.log("inside newData");
-};
+const { newData } = require("../../controllers/example-controller");
+
+// const newData = function () {
+//   console.log("inside newData");
+// };
 
 // /api/example
-// router.route("/example").post(newData);
-router.route("/").get((req, res) => {
-  res.send("<h1>hello</h1>");
-  // res.sendFile(path.join(__dirname, "../../public/home.html"));
-});
+router.route("/").post(newData);
+
+// router.route("/").get((req, res) => {
+//   res.send("hello there");
+
+// res.sendFile(path.join(__dirname, "../../public/home.html"));
+
+// });
 
 // // /api/comments/<pizzaId>/<commentId>
 // router
