@@ -1,3 +1,3 @@
-const dataOne = require("./schemaOne");
+const temmModel = require("./temmModel");
 
-module.exports = { dataOne };
+module.exports = { temmModel };

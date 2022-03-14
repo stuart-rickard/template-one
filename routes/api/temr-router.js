@@ -1,12 +1,14 @@
 const router = require("express").Router();
-const { newData } = require("../../controllers/example-controller");
+const {
+  createDocument,
+  readAllDocuments,
+  updateDocumentById,
+  deleteDocumentById,
+} = require("../../controllers/temc-controller");
 
-// const newData = function () {
-//   console.log("inside newData");
-// };
-
-// /api/example
-router.route("/").post(newData);
+// /api/temr
+router.route("/").post(createDocument).get(readAllDocuments);
+router.route("/:id").put(updateDocumentById).delete(deleteDocumentById);
 
 // router.route("/").get((req, res) => {
 //   res.send("hello there");

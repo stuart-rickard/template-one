@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const exampleRoutes = require("./example-routes");
+const temrRoutes = require("./temr-router");
 
-router.use("/example", exampleRoutes);
+router.use("/temr", temrRoutes);
 
 module.exports = router;

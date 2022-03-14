@@ -17,12 +17,14 @@ const { Schema, model, Types } = require("mongoose");
 //   },
 // });
 
-const dataOneSchema = new Schema({
-  requiredString: {
+const temsSchema = new Schema({
+  aString: {
     type: String,
     default: "default",
-    // required: true,
   },
+
+  // TODO: fill in more commented typical code
+
   // createdAt: {
   //   type: Date,
   //   default: Date.now,
@@ -38,6 +40,6 @@ const dataOneSchema = new Schema({
   //   id: false,
 });
 
-const dataOne = model("dataOne", dataOneSchema);
+const temmModel = model("temdDb", temsSchema);
 
-module.exports = dataOne;
+module.exports = temmModel;
